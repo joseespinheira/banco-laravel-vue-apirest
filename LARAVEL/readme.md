@@ -1,6 +1,5 @@
 # BANZE
 
-
 ## Project setup
 ```
 composer install
@@ -11,12 +10,7 @@ composer install
 php artisan key:generate
 ```
 
-### Compiles and hot-reloads for development
+### Start server
 ```
 php artisan serve
 ```
-
-## License
-
-[MIT license](http://opensource.org/licenses/MIT).
-
