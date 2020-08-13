@@ -19,3 +19,4 @@ php artisan serve
 ## License
 
 [MIT license](http://opensource.org/licenses/MIT).
+
