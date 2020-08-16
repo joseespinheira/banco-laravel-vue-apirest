@@ -8,6 +8,7 @@ import DepositadoPage from '../pages/depositar/DepositadoPage'
 import SacarPage from '../pages/sacar/SacarPage'
 import SacadoPage from '../pages/sacar/SacadoPage'
 import SaldoPage from '../pages/saldo/SaldoPage'
+import ExtratoPage from '../pages/extrato/ExtratoPage'
 
 Vue.use(Router);
 
@@ -21,6 +22,7 @@ export const router = new Router({
     { path: '/sacar', component: SacarPage },
     { path: '/sacado', component: SacadoPage },
     { path: '/saldo', component: SaldoPage },
+    { path: '/extrato', component: ExtratoPage },
 
     // otherwise redirect to home
     { path: '*', redirect: '/' }

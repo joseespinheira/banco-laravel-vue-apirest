@@ -1,7 +1,7 @@
 <template>
     <div>
-      <h1>BanZé</h1>
-      <h1>Bem vindo(a)!</h1>
+      <h1><u>BanZé</u></h1>
+      <h2>Bem vindo(a)!</h2>
 
     </div>
 </template>

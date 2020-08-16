@@ -1,10 +1,16 @@
 <template>
   <div>
     <!--div class="alert alert-info">Pagina de saldo</div-->
-    <h3>Conta: {{user.conta}}</h3>
-    <h3>Agência: {{user.agencia}}</h3>
-    <h2>Saldo</h2>
-    <h2 v-on="handleH()">Valor: {{saldo}}</h2>
+    <h2><u>Saldo</u></h2>
+    <div class="valor">
+
+    <h3 v-on="handleH(user)">Valor: R$
+      </h3>
+        <img v-show="saldochegou" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+    <h3>
+          {{saldo}}
+    </h3>
+    </div>
   </div>
 </template>
 
@@ -12,6 +18,7 @@
 export default {
   data() {
     return {
+      saldochegou: true,
       saldo: "",
       agencia: "",
       conta: "",
@@ -29,6 +36,7 @@ export default {
   },
   methods: {
     handleH(e) {
+
         let valor = 0
       const requestOptions = {
         method: "GET"
@@ -49,7 +57,8 @@ export default {
       setTimeout(() => {
 
           this.saldo = valor;
-      }, 1000);
+          this.saldochegou = false;
+      }, 500);
     },
     handleSubmit(e) {
       this.submitted = true;
@@ -62,3 +71,16 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.valor{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: baseline;
+}
+img{
+  width: 16px;
+  height: 16px;
+}
+</style>

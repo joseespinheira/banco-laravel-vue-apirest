@@ -4,7 +4,8 @@ import { authHeader } from '../_helpers';
 export const actionService = {
 
     depositar,
-    saldo
+    saldo,
+    sacar
 };
 
 function depositar(agencia, conta, valor) {
@@ -17,6 +18,22 @@ function depositar(agencia, conta, valor) {
     // console.log(valor);
     // console.log(requestOptions.body);
     return fetch(`${config.apiUrl}/accounts/depositar?` + `agency=${agencia}&account=${conta}&balance=${valor}`, requestOptions)
+        .then(handleResponse)
+        .then(retorno => {
+            return retorno;
+        });
+}
+
+function sacar(agencia, conta, valor) {
+    const requestOptions = {
+        method: 'POST',
+        headers: authHeader()
+    };
+    // console.log(agencia);
+    // console.log(conta);
+    // console.log(valor);
+    // console.log(requestOptions.body);
+    return fetch(`${config.apiUrl}/accounts/sacar?` + `agency=${agencia}&account=${conta}&balance=${valor}`, requestOptions)
         .then(handleResponse)
         .then(retorno => {
             return retorno;

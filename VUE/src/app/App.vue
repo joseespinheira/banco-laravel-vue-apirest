@@ -26,8 +26,8 @@
           <div class="dados">
             <div>Olá, {{user.user.firstName + ' ' + user.user.lastName}}</div>
             <div id="ag-conta">
-              <div>Agência: {{user.user.agencia}}</div>
-              <div>Conta: {{user.user.agencia}}</div>
+              <div style="padding-right: 10px"> Agência: {{user.user.agencia}} </div>
+              <div> Conta: {{user.user.conta}}</div>
             </div>
           </div>
         </div>

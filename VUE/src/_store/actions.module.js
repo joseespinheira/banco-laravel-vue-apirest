@@ -18,9 +18,9 @@ export const actions = {
                 )
         },
 
-        saldo({ dispatch, commit }){
+        sacar({ dispatch, commit }, {agencia, conta, valor}){
 
-            actionService.sacar()
+            actionService.sacar(agencia,conta,valor)
                 .then(
                     bla => {
                         router.push('/sacado');
@@ -32,8 +32,24 @@ export const actions = {
                 )
         },
 
+        saldo({ dispatch, commit }, {user}){
+            commit('saldo',  "false" );
+            actionService.saldo(user)
+                .then(
+                    bla => {
+                        commit('saldo',  "true" );
+                    },
+                    error => {
+                        commit('loginFailure', error);
+                        dispatch('alert/error', error, { root: true });
+                    }
+                )
+        },
+
     },
     mutations: {
-
+        saldo(state) {
+            state.status = { saldo: true };
+        },
     }
 }
