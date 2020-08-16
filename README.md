@@ -8,15 +8,17 @@ Tecnologias Ultilizadas:
 - Laravel API
 - - Cors
 - VueJS
-- - Axios
+- - Axios(não usado)
 
-A aplicação ainda não tem autenticação.
+A aplicação tem autenticação JWT.
 
 Funções disponiveis na API:
 - Deposito
 - Saque
 - Saldo
-- Extrato
+- Cadastro de usuario
+- login
+- logoff
 
 Como não há autenticação o usuário deve informar agencia e conta e valor para deposito ou saque.
 
@@ -65,5 +67,13 @@ A API se comunica através de JSON e esperar, caso haja, os dados vindo via Quer
 [ x ] Criar tela de saldo
 ```
 ```
-[  ] Criar tela de extrato
+[  ] Criar tela de extrato (em breve)
 ```
+
+
+# Resumo da experiência
+Primeiro projeto que fiz ultilizando VueJS, mas como já estou estudando reactJS compensou um pouco o desenvolvimento, mas mesmo assim tive muita dificuldade para obter o conhecimento. A cada nova tela fui me abtuando e descobrindo como é o funcionamento do VueJS.
+
+Sobre o laravel já o conhecia, pois já havia feito projetos MVC, mas fazer uma API foi uma grande nova experiência, já fiz API em PHP puro e em NodeJS, mas por ter contato anterior com Laravel foi muito facil e direto mesmo sabendo que ainda tenho muito a aprender.
+
+Inicialmente a app não iria ter autenticação, porém quando olhamos para as funções de 'deposito', 'saque' e 'saldo' vemos a necessidade de uma autenticação para validar o usuario logado, consultar o saldo. A função de saque ficou aberta, mas sem um documento de regras ficou decidido o caminho mais curto e fácil.
