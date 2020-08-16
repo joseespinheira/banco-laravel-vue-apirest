@@ -56,13 +56,13 @@ A API se comunica através de JSON e esperar, caso haja, os dados vindo via Quer
 [ x ] Criar rotas
 ```
 ```
-[  ] Criar tela de deposito
+[ x ] Criar tela de deposito
 ```
 ```
-[  ] Criar tela de saque
+[ x ] Criar tela de saque
 ```
 ```
-[  ] Criar tela de saldo
+[ x ] Criar tela de saldo
 ```
 ```
 [  ] Criar tela de extrato
