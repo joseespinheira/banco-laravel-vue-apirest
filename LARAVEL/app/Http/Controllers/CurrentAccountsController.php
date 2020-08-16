@@ -32,7 +32,7 @@ class CurrentAccountsController extends Controller
                          ->sum('balance');
         }
 
-        return response()->json($sum);
+        return response()->json(["valor"=>$sum],200);
     }
 
     public function depositar(Request $request)
@@ -40,6 +40,8 @@ class CurrentAccountsController extends Controller
         // var_dump("foi");die;
         $currentAccount = new CurrentAccount();
         $currentAccount->fill($request->all());
+        // var_dump($request->all());
+        // var_dump($currentAccount);
         $currentAccount->balance = abs($currentAccount->balance);
         $currentAccount->save();
 

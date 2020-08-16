@@ -21,40 +21,40 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import axios from 'axios';
+// <script lang="ts">
+// // import { Component, Vue } from 'vue-property-decorator';
+// import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+// import axios from 'axios';
 
-@Component({
-  components: {
-    HelloWorld,
-  },
-  methods: {
-    onSubmit: function(e){
-      console.log("enviando1");
-      // e.preventDefault();
-      console.log(e)
+// @Component({
+//   components: {
+//     HelloWorld,
+//   },
+//   methods: {
+//     onSubmit: function(e){
+//       console.log("enviando1");
+//       // e.preventDefault();
+//       console.log(e)
 
-      axios.get('http://127.0.0.1:8000/api/accounts/extrato')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
-    }
-  },
-})
-export default class Home extends Vue {
+//       axios.get('http://127.0.0.1:8000/api/accounts/extrato')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
+//     }
+//   },
+// })
+// export default class Home extends Vue {
 
-}
-</script>
+// }
+// </script>
 
 <style scoped>
 .form {

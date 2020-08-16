@@ -1,11 +1,5 @@
-# BANZE
+# vue-vuex-jwt-authentication-example
 
-## Project setup
-```
-npm install
-```
+Vue + Vuex - JWT Authentication Tutorial & Example
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+To see a demo and further details go to http://jasonwatmore.com/post/2018/07/06/vue-vuex-jwt-authentication-tutorial-example
