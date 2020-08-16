@@ -28,6 +28,18 @@ export const authentication = {
         logout({ commit }) {
             userService.logout();
             commit('logout');
+        },
+        cadastrar({ dispatch, commit }, { username, password, firstName, lastName, email, agencia, conta, password_confirmation }){
+            commit('loginRequest', { username });
+            userService.cadastrar(username, password, firstName, lastName, email, agencia, conta, password_confirmation)
+            .then(
+                user => {
+                    router.push('/');
+                },
+                error => {
+                    dispatch('alert/error', error, { root: true });
+                }
+            );
         }
     },
     mutations: {

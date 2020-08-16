@@ -9,6 +9,7 @@ import SacarPage from '../pages/sacar/SacarPage'
 import SacadoPage from '../pages/sacar/SacadoPage'
 import SaldoPage from '../pages/saldo/SaldoPage'
 import ExtratoPage from '../pages/extrato/ExtratoPage'
+import CadastroPage from '../cadastro/CadastroPage'
 
 Vue.use(Router);
 
@@ -23,6 +24,7 @@ export const router = new Router({
     { path: '/sacado', component: SacadoPage },
     { path: '/saldo', component: SaldoPage },
     { path: '/extrato', component: ExtratoPage },
+    { path: '/cadastro', component: CadastroPage },
 
     // otherwise redirect to home
     { path: '*', redirect: '/' }
@@ -33,7 +35,7 @@ router.beforeEach((to, from, next) => {
   // console.log(to);
   // console.log(from);
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/login'];
+  const publicPages = ['/login','/cadastro'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
 // console.log('authRequired');
